@@ -253,10 +253,41 @@ For the exercises below use the attached SQLlite database.
 This will give you an SQL Lite shell like IRB to work with.  Then enter `.headers on` and `.mode column`
 
 1.  There is another table called types in the database which holds the types of pokemon.  Write a SELECT query to find all the types of Pokemon.  
+
+	select * from pokemon_types;
+	
+	
+
 2.  Write a SELECT Query to find Pokemon who weigh more than 1000.  You can use the '>' sign in your WHERE clause.
+
+	select english_name 
+		from pokemon
+		where weight > 1000;
+		
+		
+
 3.  Write a query to find out the ID of the ice type of pokemon in the types table.
+
+	pokemon_types doesn't give names to types?
+	type_names doens't list ice type?
+	
+	
+	
 4.  Your Ada instructor doesn't like 'shadow' type pokemon, rename the type to 'super sneaky' with the UPDATE SQL command on the types table.  
+	
+	UPDATE type_names
+		SET name = "super sneaky"
+		WHERE name = "Shadow"
+
+	
+
 5.  The Bulbasaur pokemon had bad data entered in to the database.  Write an update query to set their weight to 1200.
+	UPDATE pokemon
+	
+ 		SET weight = 1200
+ 		WHERE english_name = "Bulbasaur";
+ 
+
 6.  Write a statement to Create a new table to track your favorite Pokemon called favorite_pokemon
 It should have the following columns
 	- id (integer, primary key)
